@@ -2,7 +2,7 @@
 const rss = require('@11ty/eleventy-plugin-rss');
 
 /* Filter Imports */
-const cssminFilter = require('./src/filters/cssmin-filter.js');
+const cssminFilter = require('./src/filters/css-filter.js');
 const dateFilter = require('./src/filters/date-filter.js');
 const limitFilter = require('./src/filters/limit-filter.js');
 const markdownFilter = require('./src/filters/markdown-filter.js');
@@ -13,6 +13,7 @@ module.exports = eleventyConfig => {
 	eleventyConfig.addPlugin(rss);
 
 	// Passthrough
+	eleventyConfig.addPassthroughCopy('src/_redirects');
 	eleventyConfig.addPassthroughCopy('src/assets');
 
 	// Filters

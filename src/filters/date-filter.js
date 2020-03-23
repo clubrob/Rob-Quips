@@ -3,5 +3,5 @@ const moment = require('moment');
 module.exports = function dateFilter(value) {
 	const dateObject = moment.unix(Number(value));
 
-	return `${dateObject.format('Do MMMM')} at ${dateObject.format('HH:mm')}`;
+	return `${dateObject.format('MMMM D')}, ${dateObject.format('h:mma')}`;
 };

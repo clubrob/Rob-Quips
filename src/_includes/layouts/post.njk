@@ -1,0 +1,18 @@
+{% extends 'layouts/base.njk' %}
+
+{% block pageTitle %}{{ title | dateFilter }}{% endblock %}
+{% block content %}
+<div class="container">
+	<article class="post">
+		<h1>
+			{{ title | dateFilter }}
+		</h1>
+		{{ content | safe }}
+	</article>
+	<div class="pagination">
+		<a href="/archive/0" data-direction="backwards" class="button">
+			<span>Back to home</span>
+		</a>
+	</div>
+</div>
+{% endblock %}

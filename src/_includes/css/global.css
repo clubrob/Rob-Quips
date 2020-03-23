@@ -1,0 +1,280 @@
+/* Fonts  */
+@font-face {
+    font-family: 'Cooper Hewitt';
+    src: url('/assets/fonts/cooperhewitt-bold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cooper Hewitt';
+    src: url('/assets/fonts/cooperhewitt-light-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-dark: #242424;
+    --color-light: #f2fafc;
+    --color-primary: #276262;
+    --color-primary-dark: #163939;
+    --color-primary-light: #11797b;
+    --color-orange: #f7920e;
+    --color-azure: #18c8ea;
+    --color-gray: #858585;
+    --color-dark-gray: #333f3f;
+    --color-light-gray: #dbdbdb;
+    --font-family-heading: 'Cooper Hewitt', Verdana, sans-serif;
+    --font-family-body: 'Open Sans', sans-serif;
+    --font-family-monospace: 'Fira Code', 'Courier New', monospace;
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.333rem;
+    --size-600: 1.77rem;
+    --size-700: 3.157rem;
+    --size-800: 4.209rem;
+    --flow-space: 1em;
+    --box-padding: var(--step-4) var(--step-2);
+    /* Utopia */
+    --fluid-min-width: 320;
+    --fluid-max-width: 1024;
+    --fluid-min-size: 16;
+    --fluid-max-size: 24;
+    --fluid-min-ratio: 1.333;
+    --fluid-max-ratio: 1.333;
+
+    --fluid-screen: 100vw;
+    --fluid-bp: calc(
+        (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+            ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+    );
+}
+@media screen and (min-width: 1024px) {
+    :root {
+        --fluid-screen: calc(var(--fluid-max-width) * 1px);
+    }
+}
+
+:root {
+    --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+    --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+
+    --fluid-min-scale--2: var(--fluid-min-scale--1) * var(--fluid-min-ratio) *
+        var(--fluid-min-negative);
+    --fluid-max-scale--2: var(--fluid-max-scale--1) * var(--fluid-max-ratio) *
+        var(--fluid-max-negative);
+    --fluid-min-size--2: (var(--fluid-min-size) * var(--fluid-min-scale--2)) /
+        16;
+    --fluid-max-size--2: (var(--fluid-max-size) * var(--fluid-max-scale--2)) /
+        16;
+    --step--2: calc(
+        (
+            (var(--fluid-min-size--2) * 1rem) +
+                (var(--fluid-max-size--2) - var(--fluid-min-size--2)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale--1: var(--fluid-min-ratio) * var(--fluid-min-negative);
+    --fluid-max-scale--1: var(--fluid-max-ratio) * var(--fluid-max-negative);
+    --fluid-min-size--1: (var(--fluid-min-size) * var(--fluid-min-scale--1)) /
+        16;
+    --fluid-max-size--1: (var(--fluid-max-size) * var(--fluid-max-scale--1)) /
+        16;
+    --step--1: calc(
+        (
+            (var(--fluid-min-size--1) * 1rem) +
+                (var(--fluid-max-size--1) - var(--fluid-min-size--1)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale-0: var(--fluid-min-ratio);
+    --fluid-max-scale-0: var(--fluid-max-ratio);
+    --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+    --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+    --step-0: calc(
+        (
+            (var(--fluid-min-size-0) * 1rem) +
+                (var(--fluid-max-size-0) - var(--fluid-min-size-0)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+    --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+    --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+    --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+    --step-1: calc(
+        (
+            (var(--fluid-min-size-1) * 1rem) +
+                (var(--fluid-max-size-1) - var(--fluid-min-size-1)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+    --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+    --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+    --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+    --step-2: calc(
+        (
+            (var(--fluid-min-size-2) * 1rem) +
+                (var(--fluid-max-size-2) - var(--fluid-min-size-2)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+    --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+    --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+    --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+    --step-3: calc(
+        (
+            (var(--fluid-min-size-3) * 1rem) +
+                (var(--fluid-max-size-3) - var(--fluid-min-size-3)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+    --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+    --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+    --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+    --step-4: calc(
+        (
+            (var(--fluid-min-size-4) * 1rem) +
+                (var(--fluid-max-size-4) - var(--fluid-min-size-4)) *
+                var(--fluid-bp)
+        )
+    );
+
+    --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+    --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+    --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+    --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+    --step-5: calc(
+        (
+            (var(--fluid-min-size-5) * 1rem) +
+                (var(--fluid-max-size-5) - var(--fluid-min-size-5)) *
+                var(--fluid-bp)
+        )
+    );
+}
+/* Global Styles */
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-family-body);
+    font-size: var(--step-0);
+    overflow-x: hidden;
+}
+body,
+main,
+.container {
+    display: flex;
+    flex-direction: column;
+}
+main,
+.container,
+.post {
+    flex: auto;
+}
+img,
+figure {
+    width: 100%;
+    height: auto;
+}
+a {
+    color: var(--color-white);
+    text-decoration: underline;
+    transition: text-decoration 200ms;
+}
+a:hover {
+    text-decoration: none;
+}
+
+/* Text */
+p,
+ul,
+ol,
+blockquote,
+figure,
+code {
+    font-family: var(--font-family-body);
+    font-size: var(--step-0);
+    word-wrap: break-word;
+    hyphens: auto;
+}
+figcaption {
+    font-size: var(--size-300);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: var(--size-300);
+}
+pre[class*='language-'] {
+    margin: 2.5rem 0;
+    font-size: 1.4rem;
+}
+h1,h2,h3 {
+    font-family: var(--font-family-heading);
+}
+h1 {
+    font-size: var(--step-3);
+}
+h2 {
+    font-size: var(--step-2);
+}
+h3 {
+    font-size: var(--step-1);
+}
+blockquote {
+    font-style: italic;
+    background: var(--color-light-gray);
+    padding: 2.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.flow > * + * {
+    margin-top: var(--flow-space);
+}
+.container {
+    max-width: 50ch;
+    width: 100%;
+    margin: 0 auto;
+}
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+.feed__item, .post, .intro {
+    padding: var(--box-padding);
+}
+.feed__item + .feed__item {
+    border-top: 1px solid var(--color-gray);
+  }
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--color-gray);
+    padding: var(--step-2);
+}
+
+.pagination > * {
+    display: inline-flex;
+    align-items: center;
+}
+footer {
+    padding: var(--step-1) var(--step-2);
+    background-color: rgba(0,0,0,.3);
+}
+footer p {
+    font-size: var(--step-0);
+}
