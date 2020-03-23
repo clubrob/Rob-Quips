@@ -276,5 +276,5 @@ footer {
     background-color: rgba(0,0,0,.3);
 }
 footer p {
-    font-size: var(--step-0);
+    font-size: var(--size-300);
 }
