@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ELEVENTY_ENV=development npx eleventy --serve"
+    "start": "ELEVENTY_ENV=development npx eleventy --serve",
+    "now-build": "eleventy"
   },
   "keywords": [],
   "author": "",
