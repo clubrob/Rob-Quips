@@ -1,0 +1,9 @@
+{
+	"name": "Rob Quips",
+	"url": "https://quips.roblindsey.com",
+	"authorEmail": "rob@roblindsey.com",
+	"authorHandle": "@clubrob",
+	"authorName": "Rob Lindsey",
+	"maxPostsPerPage": 5,
+	"faviconPath": "/images/favicon.png"
+  }
