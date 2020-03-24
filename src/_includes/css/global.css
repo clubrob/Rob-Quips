@@ -14,7 +14,7 @@
 }
 
 :root {
-    --color-dark: #242424;
+    --color-dark: #1A211C;
     --color-light: #f2fafc;
     --color-primary: #276262;
     --color-primary-dark: #163939;
@@ -276,5 +276,8 @@ footer {
     background-color: rgba(0,0,0,.3);
 }
 footer p {
-    font-size: var(--size-300);
+    font-size: var(--size-400);
+}
+footer p a {
+    color: var(--color-orange);
 }
